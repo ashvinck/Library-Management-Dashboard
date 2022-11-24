@@ -5,3 +5,5 @@
     - Boxicons: https://boxicons.com/
     - Figma: https://www.figma.com/
     - Google font: https://fonts.google.com/
+    
+#Credits : https://github.com/trananhtuat/ecommerce-dashboard
