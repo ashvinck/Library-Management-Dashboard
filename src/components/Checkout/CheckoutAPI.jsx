@@ -17,7 +17,7 @@ const Getmember = () => {
             .then((data) => setCheckoutData(data))
     }
 
-    useEffect(() => getBooks(), [checkoutData]);
+    useEffect(() => getBooks(), []);
 
     return (
         <div >

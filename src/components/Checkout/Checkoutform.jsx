@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { API } from "../../Global";
 import { Button, TextField } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 // Adding a Validation Schema with Formik and YUP
@@ -21,6 +22,8 @@ const ValidationFormSchema = yup.object({
 
 
 const CheckoutForm = () => {
+
+    const navigate = useNavigate();
     // Formik validationSchema
     const formik = useFormik({
         initialValues: { title: "", borrower: "", dtr: "" },
@@ -42,6 +45,7 @@ const CheckoutForm = () => {
         })
             .then(res => res.json())
             .then(() => alert("Checkout Successfull!"))
+            .then(() => navigate("/"))
     }
 
 
