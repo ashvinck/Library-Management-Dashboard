@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { API } from "../../Global";
 import "./AddBook.css";
 import { Button, TextField } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 // Adding a Validation Schema with Formik and YUP
@@ -29,6 +30,8 @@ const ValidationSchema = yup.object({
 
 
 const AddBook = () => {
+
+    const navigate = useNavigate();
     // Formik validationSchema
     const formik = useFormik({
         initialValues: { title: "", author: "", isbn: "", availableItems: "", category: "" },
@@ -50,6 +53,7 @@ const AddBook = () => {
         })
             .then(res => res.json())
             .then(() => alert("Added a book Successfully"))
+            .then(() => navigate("/books-stall"))
     }
 
 
